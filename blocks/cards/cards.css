@@ -1,27 +1,118 @@
-.cards > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Container for all cards - displays them in a grid */
+.cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+/* Individual card styling */
+.card-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 24px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+.card-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: yellowgreen;
 }
 
-.cards .cards-card-image {
-  line-height: 0;
+/* Title */
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #333;
 }
 
-.cards > ul > li img {
+/* Description */
+.card-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: black;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+/* Image */
+.card-image {
+  margin-bottom: 20px;
+  text-align: center;
+  order: -1; /* This moves image to the top */
+}
+
+.card-image img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  max-width: 100%;
+  height: 200px;
+  border-radius: 8px;
   object-fit: cover;
 }
+
+/* Link/Button */
+.card-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1473e6;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.card-link:hover {
+  background-color: #0d66d0;
+  color: white;
+}
+/* ```
+
+### Step 4: Use it in your document
+
+In your document, create a table like this:
+```
+| Cards |
+|-------|-------|-------|-------|
+| Amazing Feature | This is a description | https://example.com | [image1] |
+| Another Feature | Another description | https://example.com | [image2] |
+| Third Feature | Yet another description | https://example.com | [image3] |
+```
+
+**Important:** 
+- First row = `Cards` (block name - plural!)
+- Each subsequent row = One card
+- 4 columns: Title | Description | Link | Image
+
+---
+
+## Visual Comparison
+
+**Before (single `card` block):**
+```
+┌─────────┐
+│ Card 1  │
+└─────────┘
+┌─────────┐
+│ Card 2  │
+└─────────┘
+┌─────────┐
+│ Card 3  │
+└─────────┘
+```
+(Stacks vertically)
+
+**After (new `cards` block):**
+```
+┌─────────┐  ┌─────────┐  ┌─────────┐
+│ Card 1  │  │ Card 2  │  │ Card 3  │
+└─────────┘  └─────────┘  └─────────┘ */
