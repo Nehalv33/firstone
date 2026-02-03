@@ -1,0 +1,60 @@
+/* Center button */
+.button {
+    display: flex;
+    justify-content: center;
+    margin: 32px 0;
+  }
+  
+  /* Button */
+  .eds-button {
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  
+  .eds-button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+  }
+  
+  /* Popup overlay */
+  .welcome-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  /* Popup box */
+  .welcome-popup {
+    background: #fff;
+    padding: 24px 32px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 320px;
+    width: 90%;
+  }
+  
+  .welcome-popup h3 {
+    margin-top: 0;
+  }
+  
+  .close-btn {
+    margin-top: 16px;
+    padding: 8px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+  }
+      
